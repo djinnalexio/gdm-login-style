@@ -1,8 +1,8 @@
 ---
-# SPDX-License-Identifier: MIT OR LGPL-2.0-or-later
+# SPDX-License-Identifier: GPL-3.0-or-later
 env:
   es6: true
-extends: 'eslint:recommended'
+extends: "eslint:recommended"
 rules:
   array-bracket-newline:
     - error
@@ -55,11 +55,11 @@ rules:
     - error
     - 4
     - ignoredNodes:
-      # Allow not indenting the body of GObject.registerClass, since in the
-      # future it's intended to be a decorator
-      - 'CallExpression[callee.object.name=GObject][callee.property.name=registerClass] > ClassExpression:first-child'
+        # Allow not indenting the body of GObject.registerClass, since in the
+        # future it's intended to be a decorator
+        - "CallExpression[callee.object.name=GObject][callee.property.name=registerClass] > ClassExpression:first-child"
       # Allow dedenting chained member expressions
-      MemberExpression: 'off'
+      MemberExpression: "off"
   key-spacing:
     - error
     - beforeColon: false
@@ -95,7 +95,7 @@ rules:
   no-implicit-coercion:
     - error
     - allow:
-      - '!!'
+        - "!!"
   no-invalid-this: error
   no-iterator: error
   no-label-var: error
@@ -106,7 +106,7 @@ rules:
   no-new-wrappers: error
   no-octal-escape: error
   no-proto: error
-  no-prototype-builtins: 'off'
+  no-prototype-builtins: "off"
   no-restricted-properties:
     - error
     - object: Lang

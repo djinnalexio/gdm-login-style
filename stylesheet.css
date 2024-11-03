@@ -1,11 +1,11 @@
-/* custom */
 .login-dialog {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 #lockScreenGroup,
 #lockDialogGroup {
-  background: url(file:///usr/share/backgrounds/gdm-login-background.jpg);
+  background: url(file:///usr/local/share/gnome-shell/extensions/gdm-login-style@icedman.github.com/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+}

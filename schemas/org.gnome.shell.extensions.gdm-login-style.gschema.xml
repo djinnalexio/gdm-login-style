@@ -1,0 +1,13 @@
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<!DOCTYPE xml>
+<schemalist gettext-domain="gdm-login-style">
+  <schema path="/org/gnome/shell/extensions/gdm-login-style/"
+    id="org.gnome.shell.extensions.gdm-login-style">
+    <key type="s" name="background-image">
+      <default>
+        "/usr/local/share/gnome-shell/extensions/gdm-login-style@icedman.github.com/background.jpg"</default>
+      <summary>Background Image</summary>
+      <description>Path to background image</description>
+    </key>
+  </schema>
+</schemalist>

@@ -1,33 +1,22 @@
-all: build install lint
-
-.PHONY: build install
+.phony: build install uninstall clean lint
 
 build:
-	glib-compile-schemas --strict --targetdir=schemas/ schemas
+	gnome-extensions pack . -f --extra-source=background.jpg
 
 install: build
-	echo "installing..."
+	# Installing...
 	sudo rm -rf /usr/local/share/gnome-shell/extensions/gdm-login-style@icedman.github.com/
 	sudo mkdir -p /usr/local/share/gnome-shell/extensions/gdm-login-style@icedman.github.com/
-	sudo cp -R ./* /usr/local/share/gnome-shell/extensions/gdm-login-style@icedman.github.com/
-# 	sudo -u gdm dbus-launch gsettings set org.gnome.shell enabled-extensions "['gdm-login-style@icedman.github.com']"
-	sudo -u gdm dbus-launch gnome-extensions enable gdm-login-style@icedman.github.com
-	sudo cp -n ./background.jpg /usr/share/backgrounds/gdm-login-background.jpg
+	sudo unzip gdm-login-style@icedman.github.com.shell-extension.zip -d /usr/local/share/gnome-shell/extensions/gdm-login-style@icedman.github.com/
+	# Enabling...
+	sudo -u gdm gnome-extensions enable gdm-login-style@icedman.github.com
 
 uninstall:
-	echo "removing..."
 	sudo rm -rf /usr/local/share/gnome-shell/extensions/gdm-login-style@icedman.github.com/
+	# Removed extension files.
 
 clean:
-	rm -rf ./build
-	
+	rm -f gdm-login-style@icedman.github.com.shell-extension.zip
+
 lint:
 	eslint ./
-
-xml-lint:
-	cd ui ; \
-	find . -name "*.ui" -type f -exec xmllint --output '{}' --format '{}' \;
-
-pretty: xml-lint
-	rm -rf ./build/*
-	prettier --single-quote --write "**/*.js"

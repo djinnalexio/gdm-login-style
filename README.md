@@ -1,67 +1,61 @@
-<br/>
-<p align="center">
-  <h3 align="center">Customize GDM login</h3>
+<h1 align="center">GDM Login Style</h1>
 
-  <p align="center">
-    Customize the GDM login screen with your own background image.
-    <br/>
-    <br/>
-  </p>
-</p>
+<h3 align="center">Customize the GDM login screen with your own background image</h3>
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/icedman)
 
 ## Features
 
-* Safely customize the GDM login screen. No need to extract, and recompile shell resources.
+* Safely and easily customize the GDM login screen. No need to extract, and recompile shell resources.
 
 ## Install
 
-To install the background and stylesheet:
+To install or update the background and stylesheet:
 
 ```sh
 make install
 ```
 
-and to remove:
+To remove:
 
 ```sh
 make uninstall
 ```
 
-## Background image
-
-Edit or replace *background.jpg*. This will be copied to:
-
-```sh
-/usr/share/backgrounds/gdm-login-background.jpg
-```
-
 ## Customize
 
-Edit stylesheet.css for a fully customized login screen.
+### Background image
+
+Just replace the `background.jpg` file with your own image.
+
+### Style
+
+Edit the `stylesheet.css` file for a fully customized login screen.
 
 ```css
 .login-dialog {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 #lockScreenGroup,
 #lockDialogGroup {
-  background: url(file:///usr/share/backgrounds/gdm-login-background.jpg);
+  background: url(file:///usr/local/share/gnome-shell/extensions/gdm-login-style@icedman.github.com/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 ```
+
 ## Technical Information
 
 The gdm login screen is run as user *gdm*. The extension will be installed and enabled at the *gdm* user profile. In some systems (like Arch linux), a dconf reset may be needed for user *gdm*.
 
 ```sh
-sudo -u gdm dbus-launch dconf reset -f
+sudo -u gdm dconf reset -f
 ```
+
+It is compatible with immutable distros like **Fedora Silverblue** that have a writable `/var` directory.
 
 ## Credit
 
-https://github.com/PRATAP-KUMAR/gdm-extension/
+<https://github.com/PRATAP-KUMAR/gdm-extension/>

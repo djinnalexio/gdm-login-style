@@ -1,21 +1,13 @@
 {
-  "description": "Customize the GDM Login",
   "name": "GDM Login Style",
-  "original-authors": [
-    "icedman"
-  ],
-  "shell-version": [
-    "45", "46"
-  ],
-  "url": "https://github.com/icedman/gdm-login-style",
   "uuid": "gdm-login-style@icedman.github.com",
-  "schema-id": "org.gnome.shell.extensions.gdm-login-style",
+  "description": "Customize the GDM login screen",
+  "shell-version": ["45","46","47"],
+  "url": "https://github.com/icedman/gdm-login-style",
   "gettext-domain": "gdm-login-style",
+  "settings-schema": "org.gnome.shell.extensions.gdm-login-style",
+  "session-modes": ["gdm"],
   "donations": {
     "buymeacoffee": "icedman"
-  },
-  "session-modes": [
-    "gdm"
-  ],
-  "version": 100
+  }
 }
