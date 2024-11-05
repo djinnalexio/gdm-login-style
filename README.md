@@ -2,8 +2,6 @@
 
 <h3 align="center">Customize the GDM login screen with your own background image</h3>
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/icedman)
-
 ## Features
 
 * Safely and easily customize the GDM login screen. No need to extract, and recompile shell resources.
@@ -14,6 +12,12 @@ To install or update the background and stylesheet:
 
 ```sh
 make install
+```
+
+If you get an error the first time, try to run the command:
+
+```sh
+sudo -u gdm dbus-launch gnome-extensions enable gdm-login-style@icedman.github.com
 ```
 
 To remove:

@@ -2,12 +2,9 @@
   "name": "GDM Login Style",
   "uuid": "gdm-login-style@icedman.github.com",
   "description": "Customize the GDM login screen",
-  "shell-version": ["45","46","47"],
+  "shell-version": ["46","47","48"],
   "url": "https://github.com/icedman/gdm-login-style",
   "gettext-domain": "gdm-login-style",
   "settings-schema": "org.gnome.shell.extensions.gdm-login-style",
-  "session-modes": ["gdm"],
-  "donations": {
-    "buymeacoffee": "icedman"
-  }
+  "session-modes": ["gdm"]
 }
